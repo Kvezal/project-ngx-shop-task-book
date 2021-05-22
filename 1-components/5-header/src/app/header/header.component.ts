@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ChangeDetectionStrategy, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'ngx-shop-header',
@@ -6,5 +6,12 @@ import { Component, ChangeDetectionStrategy} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+  @Output()
+  public goToBasket: EventEmitter<void> = new EventEmitter<void>();
 
+  public counter: number = 5;
+
+  public redirectTo(): void {
+    this.goToBasket.emit();
+  }
 }
