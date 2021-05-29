@@ -1,5 +1,9 @@
 <div class="rate">
   <div class="stars">
-    <span class="fa fa-star"></span>
+    <span
+      *ngFor="let star of stars"
+      class="fa fa-star"
+      [class.selected]="highlight(star)"
+    ></span>
   </div>
 </div>
